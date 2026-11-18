@@ -1,0 +1,87 @@
+<!-- ================= PORTAL ADMINISTRATIVO (aplicación independiente) ================= -->
+<div id="mxAdmin" aria-label="Portal administrativo">
+
+  <!-- Login -->
+  <div class="mx-login" id="mxLogin">
+    <div class="mx-login-art">
+      <img id="mxLoginLogo" alt="Mateo Herrera Seguros">
+      <h1>Todo el negocio en un solo tablero</h1>
+      <p>Clientes, pipeline, agenda, cotizaciones, renovaciones, bases de datos y campañas. Cada asesor con su propia información.</p>
+      <div class="mx-login-rail"><span>Pipeline de 9 etapas</span><span>Agenda por horas</span><span>Bases de datos</span><span>Exportar PDF y Excel</span></div>
+    </div>
+    <div class="mx-login-form">
+      <div class="mx-login-card">
+        <h2>Ingresa al portal</h2>
+        <p>Acceso para Mateo y Andrea. Cada uno ve solo sus clientes.</p>
+        <div class="mx-err" id="mxErr">Cédula o contraseña incorrecta.</div>
+        <label class="mx-field"><span>Cédula</span><input class="mx-input" id="mxUser" autocomplete="username" inputmode="numeric" placeholder="Tu número de cédula"></label>
+        <label class="mx-field"><span>Contraseña</span><input class="mx-input" id="mxPass" type="password" autocomplete="current-password" placeholder="Tu contraseña"></label>
+        <button class="mx-btn mx-btn-p mx-btn-block" id="mxEntrar">Ingresar al portal</button>
+        <button class="mx-back" data-mx-site><span data-ico="arrowL"></span> Volver al sitio web</button>
+        <div class="mx-demo-note" id="mxLoginNote">Tus datos están protegidos: cada asesor solo puede ver y modificar su propia información.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aplicación -->
+  <div class="mx-app" id="mxApp">
+    <aside class="mx-side" id="mxSide">
+      <div class="mx-brand"><img id="mxBrandLogo" alt="Mateo Herrera"></div>
+      <nav class="mx-nav" id="mxNav">
+        <div class="mx-nav-g">Operación</div>
+        <button class="mx-nav-i on" data-v="dash"><span data-ico="grid"></span>Resumen</button>
+        <button class="mx-nav-i" data-v="pipe"><span data-ico="flow"></span>Pipeline de ventas<span class="ct" id="ctPipe">0</span></button>
+        <button class="mx-nav-i" data-v="cli"><span data-ico="users"></span>Clientes<span class="ct" id="ctCli">0</span></button>
+        <button class="mx-nav-i" data-v="agenda"><span data-ico="cal"></span>Agenda<span class="ct" id="ctAg">0</span></button>
+        <button class="mx-nav-i" data-v="cot"><span data-ico="doc"></span>Cotizaciones<span class="ct" id="ctCot">0</span></button>
+        <button class="mx-nav-i" data-v="ren"><span data-ico="refresh"></span>Renovaciones<span class="ct warn" id="ctRen">0</span></button>
+        <button class="mx-nav-i" data-v="cart"><span data-ico="money"></span>Cartera y cumpleaños<span class="ct" id="ctCart">0</span></button>
+        <div class="mx-nav-g">Prospección</div>
+        <button class="mx-nav-i" data-v="bd"><span data-ico="db"></span>Base de datos<span class="ct" id="ctBD">0</span></button>
+        <button class="mx-nav-i" data-v="camp"><span data-ico="mega"></span>Campañas WhatsApp</button>
+        <div class="mx-nav-g">Sistema</div>
+        <button class="mx-nav-i" data-v="conf"><span data-ico="gear"></span>Configuración</button>
+      </nav>
+      <div class="mx-side-foot">
+        <div class="mx-user" id="mxUserBox"></div>
+        <div class="mx-credit">Desarrollado por <b>PubliFuturo</b></div>
+      </div>
+    </aside>
+
+    <div class="mx-main">
+      <header class="mx-top">
+        <button class="mx-ico mx-burger" id="mxBurger" aria-label="Abrir menú"><span data-ico="menu"></span></button>
+        <div><h1 id="mxTitle">Resumen</h1><div class="sub" id="mxSub"></div></div>
+        <div class="mx-top-r">
+          <span class="mx-live" id="mxLive"><i></i>Conectado</span>
+          <button class="mx-ico" id="mxTheme" aria-label="Cambiar tema" title="Modo claro / oscuro"><span data-ico="moon"></span></button>
+          <button class="mx-btn mx-btn-s" data-mx-site><span data-ico="globe"></span><span class="hide-sm">Ver sitio web</span></button>
+        </div>
+      </header>
+      <div class="mx-scroll" id="mxScroll">
+        <div class="mx-content">
+          <section class="mx-view on" data-v="dash" id="vDash"></section>
+          <section class="mx-view" data-v="pipe" id="vPipe"></section>
+          <section class="mx-view" data-v="cli" id="vCli"></section>
+          <section class="mx-view" data-v="agenda" id="vAgenda"></section>
+          <section class="mx-view" data-v="cot" id="vCot"></section>
+          <section class="mx-view" data-v="ren" id="vRen"></section>
+          <section class="mx-view" data-v="cart" id="vCart"></section>
+          <section class="mx-view" data-v="bd" id="vBD"></section>
+          <section class="mx-view" data-v="camp" id="vCamp"></section>
+          <section class="mx-view" data-v="conf" id="vConf"></section>
+        </div>
+      </div>
+      <div class="mx-loading-ov" id="mxLoading"><span class="mx-spin"></span>Cargando tu información…</div>
+    </div>
+  </div>
+
+  <div class="mx-scrim" id="mxScrim"></div>
+  <aside class="mx-drawer" id="mxDrawer" aria-hidden="true">
+    <div class="mx-dr-h"><div><h3 id="mxDrT"></h3><p id="mxDrS"></p></div><button class="mx-ico" id="mxDrX" aria-label="Cerrar"><span data-ico="x"></span></button></div>
+    <div class="mx-dr-b" id="mxDrB"></div>
+    <div class="mx-dr-f" id="mxDrF"></div>
+  </aside>
+  <div class="mx-toast" id="mxToast"></div>
+</div>
+
